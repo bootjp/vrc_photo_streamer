@@ -15,7 +15,7 @@
 
 #include "photo_controller.h"
 
-namespace vrc_photo_streamer::http {
+namespace vrc_photo_streamer { namespace http {
 
 http_server::http_server(std::shared_ptr<controller::photo_controller> controller)
     : controller_(controller){};
@@ -120,4 +120,4 @@ void http_connection::check_deadline() {
     }
   });
 }
-} // namespace vrc_photo_streamer::http
+} } // namespace vrc_photo_streamer::http

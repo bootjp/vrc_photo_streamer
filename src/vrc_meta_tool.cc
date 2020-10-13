@@ -169,15 +169,25 @@ void meta_tool::read(filesystem::path path) {
   auto chunks = util.read();
   for (auto chunk : *chunks) {
     auto [type, data] = chunk;
-    if (type == "vrCd") {
-      set_date(data);
-    } else if (type == "vrCp") {
-      set_photographer(data);
-    } else if (type == "vrCw") {
-      set_world(data);
-    } else if (type == "vrCu") {
-      add_user(data);
+
+    switch (type name) {
+    case "vrCd":
+        set_date(data);
+    break;
+
+    case "vrCp":
+        set_photographer(data);
+    break;
+
+    case "vrCw":
+        set_world(data);
+    break;
+
+    case "vrCu":
+        add_user(data);
+    break;
     }
+
   }
 }
 } // namespace vrc_photo_streamer::meta_tool
